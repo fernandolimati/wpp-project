@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react"
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [externalizeDepsPlugin({ exclude: ["@skydesk/shared"] })],
     build: {
       outDir: "out/main",
       rollupOptions: {
@@ -15,7 +15,7 @@ export default defineConfig({
     },
   },
   preload: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [externalizeDepsPlugin({ exclude: ["@skydesk/shared"] })],
     build: {
       outDir: "out/preload",
       rollupOptions: {
