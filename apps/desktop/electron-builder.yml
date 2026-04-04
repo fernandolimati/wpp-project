@@ -1,0 +1,31 @@
+appId: com.skydesk.crm
+productName: SkyDesk CRM
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**/*
+  - "!node_modules/**/*"
+asar: true
+npmRebuild: true
+publish:
+  provider: github
+linux:
+  target:
+    - AppImage
+  category: Office
+mac:
+  target:
+    - dmg
+    - zip
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  notarize: false
+win:
+  target:
+    - nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true

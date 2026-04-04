@@ -1,0 +1,16 @@
+node_modules/
+dist/
+out/
+.next/
+.turbo/
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+coverage/
+.vercel/
