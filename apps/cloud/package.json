@@ -12,7 +12,7 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
-    "@skydesk/shared": "workspace:*",
+    "@skydesk/shared": "*",
     "@supabase/supabase-js": "^2.49.0",
     "@trpc/server": "^11.0.0",
     "@trpc/client": "^11.0.0",
