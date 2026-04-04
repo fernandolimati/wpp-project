@@ -4,21 +4,17 @@ import react from "@vitejs/plugin-react"
 
 export default defineConfig({
   main: {
-    plugins: [
-      externalizeDepsPlugin({
-        exclude: [
-          "@skydesk/shared",
-          "@whiskeysockets/baileys",
-          "@hapi/boom",
-          "@supabase/supabase-js",
-        ],
-      }),
-    ],
+    plugins: [externalizeDepsPlugin({ exclude: ["@skydesk/shared"] })],
     build: {
       outDir: "out/main",
+      lib: {
+        entry: resolve(__dirname, "src/main/index.ts"),
+        formats: ["es"],
+        fileName: () => "index.mjs",
+      },
       rollupOptions: {
-        input: {
-          index: resolve(__dirname, "src/main/index.ts"),
+        output: {
+          format: "es",
         },
       },
     },
