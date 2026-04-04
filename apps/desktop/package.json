@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",
-    "rebuild": "electron-builder install-app-deps",
+    "rebuild": "electron-rebuild -f -w better-sqlite3",
     "type-check": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
     "lint": "eslint .",
     "build:dist": "electron-vite build && electron-builder --config electron-builder.yml"
@@ -38,6 +38,7 @@
     "clsx": "^2.1.0",
     "electron": "33.2.0",
     "electron-builder": "^25.1.8",
+    "@electron/rebuild": "^3.7.0",
     "electron-vite": "^2.3.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
